@@ -6,3 +6,6 @@ chmod u+x ~/saml2aws
 cd /usr/local/bin
 sudo ln -s /home/node/saml2aws
 sudo chmod +x node *
+cd /workspaces
+# https://github.com/pnpm/pnpm/issues/5803 - Run this from your root project folder
+pnpm config set store-dir /home/node/.local/share/pnpm/store
