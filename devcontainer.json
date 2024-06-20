@@ -1,10 +1,16 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-  "name": "Typescript-SAML2AWS",
+  "name": "Navitas Products",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
-  "mounts": [{ "source": "./.devcontainer", "target": "/home/node/hostmount/", "type": "bind" }],
+  "mounts": [
+    { "source": "./.devcontainer", "target": "/home/node/hostmount/", "type": "bind" },
+    { "source": "./.devcontainer/aws", "target": "/home/node/.aws", "type": "bind" },
+    { "source": "./.devcontainer/aws/.saml2aws", "target": "/home/node/.saml2aws", "type": "bind" }
+    
+  ],
+
   "features": {
     "ghcr.io/devcontainers/features/aws-cli:1": {},
     "ghcr.io/eitsupi/devcontainer-features/jq-likes": {},
@@ -23,7 +29,8 @@
         "streetsidesoftware.code-spell-checker",
         "dbaeumer.vscode-eslint",
         "ms-vscode-remote.remote-containers",
-        "DavidAnson.vscode-markdownlint"
+        "DavidAnson.vscode-markdownlint",
+        "waderyan.gitblame"
       ]
     }
   }
